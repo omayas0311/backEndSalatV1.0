@@ -1,5 +1,6 @@
 const express = require('express');
 const data = require("./annee.json");
+require('dotenv').config();
 const app = express();
 const port = process.env.port || 3001;
 
@@ -47,5 +48,5 @@ app.use((req,res)=>{
 
 app.listen(port, () => {
 
-    console.log("à l'ecoute...");
+    console.log("à l'ecoute au port: "+port);
 });
