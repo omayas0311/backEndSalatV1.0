@@ -1,2 +1,6 @@
-node_modules
+# Ignorer les fichiers de configuration sensibles
 .env
+# Ignorer les dossiers générés automatiquement
+node_modules/
+dist/
+build/
