@@ -3,9 +3,11 @@ const data = require("./annee.json");
 require('dotenv').config();
 const app = express();
 const port = process.env.port || 3001;
+let nbrRequest=1;
 
 app.use((req,res,next)=>{
-    console.log("1er Mw");
+    console.log(nbrRequest+" request at "+ new Date().getHours()+" h "+ new Date().getMinutes()+" mn");
+    nbrRequest++;
     next();
 });
 
@@ -29,7 +31,7 @@ app.get('/api/salat/bymonth/:mois', (req, res) => {
     res.status(200).json(h)
 });
 
-app.get('/api/salat/today', (req, res) => {
+app.get('/api/salat/byday', (req, res) => {
     const jour = new Date().getDate();
     const mois = new Date().getMonth() + 1;
 
